@@ -4,12 +4,13 @@ const headLog = document.querySelector('.top-header__log');
 
 navToggle.addEventListener('click', () => {
 	const visibility = headBtns.getAttribute('data-visible');
+	const isVisible = visibility === 'true';
 
-	if (visibility === 'false') {
-		headLog.setAttribute('data-visible', "false");
-		headBtns.setAttribute('data-visible', "true");
+	if (!isVisible) {
+		headLog.setAttribute('data-visible', isVisible);
+		headBtns.setAttribute('data-visible', !isVisible);
 	} else {
-		headLog.setAttribute('data-visible', "true");
-		headBtns.setAttribute('data-visible', "false");
+		headLog.setAttribute('data-visible', isVisible);
+		headBtns.setAttribute('data-visible', !isVisible);
 	}
 })
